@@ -49,6 +49,15 @@
                 </payparts>
             </updates>
         </layout>
+        <translate>
+            <modules>
+                <Payparts_Payment>
+                    <files>
+                        <default>Payparts_Payment.csv</default>
+                    </files>
+                </Payparts_Payment>
+            </modules>
+        </translate>
     </frontend>
     <adminhtml>
         <translate>

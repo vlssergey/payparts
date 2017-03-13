@@ -14,6 +14,22 @@ class Payparts_Payment_Block_Checkout_Method extends Mage_Payment_Block_Form
     }
     
     /**
+     * Payparts helper
+     * @return Payparts_Payment_Helper_Data
+     */
+    protected function paypartsHelper() {
+        return Mage::helper('payparts');
+    }
+    
+    /**
+     * Payment description
+     * @return string
+     */
+    public function getDescription() {
+        return $this->paypartsHelper()->getPaymentDescription();
+    }
+    
+    /**
      * Method is select
      * @return bool
      */

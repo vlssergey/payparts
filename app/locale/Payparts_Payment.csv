@@ -1,3 +1,8 @@
+"Available periods", "Доступные периоды рассрочки"
+"Description", "Описание"
+"Description will be displayed after payment method in checkout", "Описание будет отображается после метода опдаты на странице покупки"
+"Processing Order Status", "Статус ордера в случае успешной оплаты"
+"Merchant Type", "Тип рассрочки"
 "Extension:","Модуль:"
 "Shipping", "Доставка"
 "Enabled","Включен"

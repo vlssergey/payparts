@@ -8,7 +8,7 @@
 ?>
 <ul id="payment_form_<?php echo $this->getMethodCode() ?>" style="display:none" class="form-list" data-is-selected="<?php echo $this->isSelect(); ?>">
     <li id="payparts-select-block">
-        <p>
+        <p class="payment-method">
             <label for="month-sel">Срок,мес.</label>
             <select id="month-sel" name="partsCount">
                 <option disabled>Срок,мес.</option>
@@ -17,5 +17,18 @@
                 <?php endforeach; ?>
             </select>
         </p>
+        <?php if ($this->getDescription()): ?>
+        <p class="payment-description">
+            <?php echo $this->getDescription(); ?>
+        </p>
+        <?php endif; ?>
     </li>
 </ul>
+<style type="text/css">
+    .payment-method, .payment-description {
+        text-align: left;
+    }
+    .payment-description {
+        margin-top: 5px;
+    }
+</style>
