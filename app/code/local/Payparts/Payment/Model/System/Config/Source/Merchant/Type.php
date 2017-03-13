@@ -1,11 +1,6 @@
 <?php
 /**
-<<<<<<< .mine
  * Used in creating options for Merchat type
-=======
- * Used in creating options for Merchant type
->>>>>>> .theirs
- *
  */
 class Payparts_Payment_Model_System_Config_Source_Merchant_Type
 {
