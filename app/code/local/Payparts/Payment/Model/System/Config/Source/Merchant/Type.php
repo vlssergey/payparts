@@ -1,6 +1,6 @@
 <?php
 /**
- * Used in creating options for Yes|No config value selection
+ * Used in creating options for Merchant type
  *
  */
 class Payparts_Payment_Model_System_Config_Source_Merchant_Type
