@@ -1,0 +1,21 @@
+<?php
+/**
+ * Checkout. Payment method template
+ * 
+ * @see Payparts_Payment_Block_Checkout_Method
+ */
+/*@var $this Payparts_Payment_Block_Checkout_Method*/
+?>
+<ul id="payment_form_<?php echo $this->getMethodCode() ?>" style="display:none" class="form-list" data-is-selected="<?php echo $this->isSelect(); ?>">
+    <li id="payparts-select-block">
+        <p>
+            <label for="month-sel">Срок,мес.</label>
+            <select id="month-sel" name="partsCount">
+                <option disabled>Срок,мес.</option>
+                <?php foreach ($this->getAvailablePeriods() as $period): ?>
+                <option value="<?php echo $period; ?>"><?php echo $period; ?></option>
+                <?php endforeach; ?>
+            </select>
+        </p>
+    </li>
+</ul>
