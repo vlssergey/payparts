@@ -167,11 +167,12 @@ class Payparts_Payment_Model_Method_Payment extends Mage_Payment_Model_Method_Ab
 
       $result = array();
 
+      /*@var $item Mage_Sales_Model_Order_Item*/
       foreach ($order->getAllVisibleItems() as $item)
       {
         $result['orders_sales'][] = array(
             'name'  => $item->getName(),
-            'price' => (string)number_format($item->getPrice(), 2, '.', ''),
+            'price' => (string)number_format($item->getPrice()-$item->getDiscountAmount(), 2, '.', ''),
             'count' => (int)$item->getQtyOrdered()
 
         );
@@ -186,8 +187,7 @@ class Payparts_Payment_Model_Method_Payment extends Mage_Payment_Model_Method_Ab
       $result['currency'] = $order->getOrderCurrencyCode();
       $result['responseUrl'] = Mage::getUrl('payparts/payment/return/', 
               array('transaction_id' => $order->getRealOrderId(), 'shop_id' => $this->getConfigData('shopident')));
-      $result['redirectUrl'] = Mage::getUrl('payparts/payment/fail/',
-              array('transaction_id' => $order->getRealOrderId(), 'shop_id' => $this->getConfigData('shopident')));
+      $result['redirectUrl'] = Mage::getUrl('checkout/onepage/success/');
       $result['products_string'] = "";
 
       if($order->getShippingAmount()){

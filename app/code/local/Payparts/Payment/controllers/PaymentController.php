@@ -99,23 +99,18 @@ class Payparts_Payment_PaymentController extends Mage_Core_Controller_Front_Acti
                                 if ($comment){
                                     $order->addStatusHistoryComment($comment, $this->paypartsHelper()->getOrderStatusProcessing())
                                         ->save();
-                                    
-                                    if ($order->canInvoice()){
-                                        
-                                    }
-                                    
                                 }
                                 break;
                             case Payparts_Payment_Model_Method_Payment::STATUS_CANCEL:
+                                
                                 if ($order->canCancel()){
-                                    
                                     $order->cancel();
-                                    
-                                    if ($comment){
-                                        $order->addStatusHistoryComment($comment, Mage_Sales_Model_Order::STATE_CANCELED)
-                                            ->save();
-                                    }
                                 }
+                                
+                                if ($comment){
+                                    $order->addStatusHistoryComment($comment, Mage_Sales_Model_Order::STATE_CANCELED)->save();
+                                }
+                                
                                 break;
                         }
                         
